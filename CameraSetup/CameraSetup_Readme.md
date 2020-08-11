@@ -16,8 +16,8 @@ Via the compputer or the trigger button.
 Setup up temp saving directories for image in the code in advance and camera properties.
 
 files:
-- cameracontroller.m
-- cameracontroller.fig
+- SetupController.m
+- SetupController.fig
 - PhotoProgram.m
 
 -----------------------------------
