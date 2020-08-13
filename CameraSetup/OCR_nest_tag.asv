@@ -52,9 +52,7 @@ E = 0; % error marker
  
 %  roi = [410,410,1356,224];
  BW = imclearborder(imcomplement(imcrop(BW,roi)));
- figure(2);
  BW = imcrop(BW);
- close(figure(2));
  se = strel('disk',5);
  %figure;
  BW = imopen(BW,se); % open the image to remove spots

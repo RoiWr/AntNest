@@ -95,7 +95,7 @@ end
 configurePin(a,'D4','DigitalInput')
 
 % load complete photo sound
-[handles.sound.y,handles.sound.Fs]=audioread('D:\NestConstructionExp\Scripts\sound.mp3');
+[handles.sound.y,handles.sound.Fs]=audioread('sound.mp3');
 
 % Update handles structure
 guidata(hObject, handles);
@@ -122,11 +122,11 @@ global a C
 
     if hObject.Value == 1  % if button pressed => trigger is armed
         % Connection to right camera ('upperCam')
-        C.Cameras(2); 
-        if C.property.devicename == 'lowerCam' % check based on lowerCam, as constantly connected and defined
-            C.Cameras(1) % use other camera
-%        else use this camera
-        end
+%         C.Cameras(1); 
+%         if C.property.devicename == 'lowerCam' % check based on lowerCam, as constantly connected and defined
+%             C.Cameras(2) % use other camera
+% %        else use this camera
+%         end
         C.property.devicename % connect to right camara and print out camera name
         %save camera parameters
         % no. of Detect Photos
@@ -166,11 +166,11 @@ global a C
 function Capture_uc_Callback(hObject, eventdata, handles)
 % create cell arrays for Detect and Arch
 global a C
-        C.Cameras(2); 
-        if C.property.devicename == 'lowerCam' % check based on lowerCam, as constantly connected and defined
-            C.Cameras(1) % use other camera
-        % else use this camera
-        end
+%         C.Cameras(2); 
+%         if C.property.devicename == 'lowerCam' % check based on lowerCam, as constantly connected and defined
+%             C.Cameras(1) % use other camera
+%         % else use this camera
+%         end
         C.property.devicename % connect to right camara and print out camera name
         %save camera parameters
                 % no. of Detect Photos

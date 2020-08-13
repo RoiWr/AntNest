@@ -79,7 +79,7 @@ handles.TextOther='';
 
 % find and read data files of previous BroodLocators
     % setup default data directory
-    handles.Data.path = 'F:\digging_experiment_trial2\day_1\daily_temp2';
+    handles.Data.path = 'F:\digging_experiment_trial2\day_0\daily_temp2';
     addpath(handles.Data.path)
     addpath('F:\digging_experiment_trial2\Scripts') % add Scripts folder to path
     %cd(handles.Data.path)
@@ -252,11 +252,11 @@ function Save_pb_Callback(hObject, eventdata, handles)
 % hObject    handle to Save_pb (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-% a = 'F:\digging_experiment_trial2\day_1\daily_temp2';
-% b = tag;
-% c = strcat(a,b);
-% cd c
-%cd 'F:\digging_experiment_trial2\day_1\daily_temp2'
+a = 'F:\digging_experiment_trial2\day_0\daily_temp2';
+b = tag;
+c = strcat(a,b);
+cd c
+%cd 'F:\digging_experiment_trial2\day_0\daily_temp2'
 nestID = handles.NestIDinput.String;
 var = {'Queen','Brood','Workers','Other','Maintenance','Population'};
 for i=1:length(var)
@@ -318,12 +318,12 @@ end
      
 % Save images in new folder under nest name
 
-files = dir('F:\digging_experiment_trial2\day_1\daily_temp2\*.jpg');
+files = dir('F:\digging_experiment_trial2\day_0\daily_temp2\*.jpg');
 % sort files to only have files which are newer than Detect-1
     d1 = dir(handles.path); % find datenum of detect-1
     idx = find([files.datenum]>=d1(1).datenum);
     
-Destination = strcat('F:\digging_experiment_trial2\day_1\daily_temp2',nestID);
+Destination = strcat('F:\digging_experiment_trial2\day_0\daily_temp2',nestID);
 if exist(Destination,'dir') == 0
     mkdir(Destination)
 end
@@ -443,7 +443,7 @@ function Select_pb_Callback(hObject, eventdata, handles)
 % hObject    handle to Select_pb (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-    [FileName,PathName,~] = uigetfile('F:\digging_experiment_trial2\day_1\daily_temp2\*.jpg','Select Image');
+    [FileName,PathName,~] = uigetfile('F:\digging_experiment_trial2\day_0\daily_temp2\*.jpg','Select Image');
     handles.path = strcat(PathName,FileName);
     handles = openImage(handles);
 guidata(hObject,handles) % save changes to data
@@ -596,7 +596,7 @@ function FindLastPopNo(handles)
     
    % 'D:\NestConstructionExp\BroodLocationData\',tag,'_Population.csv'));
    % Initialize variables.
-    filename = ['F:\digging_experiment_trial2\day_1\daily_temp2',tag,'_Population.csv'];
+    filename = ['F:\digging_experiment_trial2\day_0\',tag,'_Population.csv'];
     delimiter = ',';
     startRow = 2;
 %% Format for each line of text:
