@@ -67,7 +67,7 @@ for i=2:length(files) % rerun again with i=FailNR after troubleshooting FailNR (
         try
             % nest register, change mode in function arguments if has
             % sqaure support blocks from 'Arch' to 'SquareArch'
-      [RGBr,A(i).tform] = NestRegister(Fixed,RGB,'SquareArch','SquareArch'); % register
+      [RGBr,A(i).tform] = NestRegister(Fixed,RGB,'Arch','Arch'); % register
 %         RGBr = RGB;
 %         A(i).tform = [];
         catch
