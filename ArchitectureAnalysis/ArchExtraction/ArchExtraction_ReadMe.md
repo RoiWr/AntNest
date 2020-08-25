@@ -11,5 +11,8 @@ This script runs on all the images:
   b. removes queen
   c. manual fixes
   d. saves BW images into new folder
-  
+
+3) update_AA.m
+Runs the same as ArchAnalysis.m for newly added images
+
 * check for missing scripts in the google Drive "Scripts" folder
