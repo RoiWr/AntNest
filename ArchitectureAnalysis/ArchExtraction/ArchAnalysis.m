@@ -12,7 +12,7 @@ saveFolderReg = strcat('D:\Ants\2Dnests\Images\RGBreg\',tag);
 saveFolderCrop = strcat('D:\Ants\2Dnests\Images\RGB\',tag);
     mkdir(saveFolderCrop)
 %% 
-for i=2:length(files) % rerun again with i=FailNR after troubleshooting FailNR (or for WrongTag)
+for i=1:length(files) % rerun again with i=FailNR after troubleshooting FailNR (or for WrongTag)
     disp([datestr(now),': Processing file ',files{i,1}])
     
         path = strcat(folder_path,'\',files{i,1});
@@ -31,7 +31,7 @@ for i=2:length(files) % rerun again with i=FailNR after troubleshooting FailNR (
     % read image and process
     RGB = imread(path);
             if info.Width > info.Height % need to rotate the image
-                RGB=imrotate(RGB,-90);
+                RGB=imrotate(RGB,-90); % make sure to disable auto-rotate in digiCamControl
             end
     
     % OCR
@@ -42,10 +42,10 @@ for i=2:length(files) % rerun again with i=FailNR after troubleshooting FailNR (
         imshow(RGB)
         tag_t = input('Insert nest tag\n','s');
     end
-         % change tag of F series to no dot and define nestID
-         if length(tag_t)==4 && tag_t(1)=='F'
-             tag_t = strcat('F',tag_t(4));
-         end
+%          % change tag of F series to no dot and define nestID
+%          if length(tag_t)==4 && tag_t(1)=='F'
+%              tag_t = strcat('F',tag_t(4));
+%          end
     
          
     if i==1 % for 1st pic which is t0 
