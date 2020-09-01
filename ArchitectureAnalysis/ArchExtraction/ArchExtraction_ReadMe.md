@@ -5,7 +5,7 @@ scripts to run:
 1) ArchAnalysis.m
 This scripts crops and registers the images to t0 image.
 IN: the raw Arch images per specific nest.
-OUT: Registered (RGBreg) and registered and cropped images (RGB) in new folders.
+OUT: Registered (RGBreg) and registered and cropped images (RGB) in new folders, and "A" metadata structure.
 
 2) ArchBWforSet.m
 This script runs on all the images:
