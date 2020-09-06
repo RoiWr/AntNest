@@ -1,4 +1,4 @@
-# Arch Data Analysis READ ME
+# Arch Data Procsseing READ ME
 
 ## 1) CM to pixel ratio determination
 core function: cmINpixels.m\
