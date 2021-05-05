@@ -12,7 +12,7 @@ ID = str2double(tag(2:end));
 load('D:\Ants\2Dnests\MatlabWorkspaces\ArchAnalysisWS\CM_pixel.mat') %load the cm to pixel ratios for each image (can be bypassed)
     
 %% set thresholds
-T1 = 0.65/(4*CM_pixel(ID)); # if CM_pixel does not exist can use a fixed value here instead
+T1 = 0.65/(4*CM_pixel(ID)); % if CM_pixel does not exist can use a fixed value here instead
 %T2 = 0.65/(4*CM_pixel(ID));
 %Tc3 = 25;
 %%
