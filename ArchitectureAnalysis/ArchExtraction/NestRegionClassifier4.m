@@ -1,11 +1,18 @@
 function Z = NestRegionClassifier4(BW,tag)
-% get image
+%function that segments the excavated nest area into 3 classes:
+% 1) tunnels
+% 2) small chambers / wide tunnels
+% 3) large chambers
+% input: binary image (BW), and image tag (F#)
+% output Z: matrix the size of the nest BW image where pixels are assigned values 1,2,3 based on the structural class or 0 if not part of the nest
+
+%% get image
 %BW = selectIMG;
 ID = str2double(tag(2:end));
-load('D:\Ants\2Dnests\MatlabWorkspaces\ArchAnalysisWS\CM_pixel.mat')
+load('D:\Ants\2Dnests\MatlabWorkspaces\ArchAnalysisWS\CM_pixel.mat') %load the cm to pixel ratios for each image (can be bypassed)
     
 %% set thresholds
-T1 = 0.65/(4*CM_pixel(ID));
+T1 = 0.65/(4*CM_pixel(ID)); # if CM_pixel does not exist can use a fixed value here instead
 %T2 = 0.65/(4*CM_pixel(ID));
 %Tc3 = 25;
 %%
@@ -64,8 +71,9 @@ Z=zeros(size(BW));
 Z(C1)=1;
 Z(C2)=2;
 Z(C3)=3;
-% figure
-% imshow(label2rgb(Z))
+
+%% figure
+% imshow(label2rgb(Z)) % a way to view the structural segmentation
 % title(tag)
 
 end
